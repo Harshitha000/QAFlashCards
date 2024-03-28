@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlashCards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="nav">
+          <h1>FlashCards</h1>
+          <div>
+            <button onclick="createCardForm()">New Quiz</button>
+            <button onclick="takeQuiz()">Take Quiz</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="create-form">
+          <h2 style="text-align: center">Create FlashCard</h2>
+          <label for="question" class="required">Question</label>
+          <textarea id="question" required></textarea>
+          <br />
+          <label for="answer" class="required">Answer</label>
+          <textarea id="answer" required></textarea>
+          <div id="error-message" style="display: none; color: red">
+            &#9888;Please fill out all the fields
+          </div>
+          <div>
+            <button id="save-btn" onclick="addFlashCard()">Save</button>
+            <button id="close-btn" onclick="hideCreateForm()">Close</button>
+          </div>
+        </div>
+        <div class="card-container">
+          <h3 id="card-num"></h3>
+          <div class="flashcard" onclick="toggleCard()">
+            <div class="card-content"></div>
+          </div>
+          <div class="card-buttons">
+            <button id="prev-btn" onclick="prevAction()">Prev</button>
+            <button id="next-btn" onclick="nextAction()">Next</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
